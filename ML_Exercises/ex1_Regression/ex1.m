@@ -3,22 +3,6 @@
 %  Instructions
 %  ------------
 %
-%  This file contains code that helps you get started on the
-%  linear exercise. You will need to complete the following functions
-%  in this exericse:
-%
-%     warmUpExercise.m
-%     plotData.m
-%     gradientDescent.m
-%     computeCost.m
-%     gradientDescentMulti.m
-%     computeCostMulti.m
-%     featureNormalize.m
-%     normalEqn.m
-%
-%  For this exercise, you will not need to change any code in this file,
-%  or any other files other than those mentioned above.
-%
 % x refers to the population size in 10,000s
 % y refers to the profit in $10,000s
 %
@@ -43,7 +27,6 @@ X = data(:, 1); y = data(:, 2);
 m = length(y); % number of training examples
 
 % Plot Data
-% Note: You have to complete the code in plotData.m
 plotData(X, y);
 
 fprintf('Program paused. Press enter to continue.\n');
@@ -51,12 +34,12 @@ pause;
 
 %% =================== Part 3: Cost and Gradient descent ===================
 
-X = [ones(m, 1), data(:,1)]; % Add a column of ones to x
+X = [ones(m, 1), data(:,1)]; % Add a column of ones to x, for vetorization
 theta = zeros(2, 1); % initialize fitting parameters
 
 % Some gradient descent settings
 iterations = 1500;
-alpha = 0.01;
+alpha = 0.01; % Learning rate
 
 fprintf('\nTesting the cost function ...\n')
 % compute and display initial cost
@@ -68,6 +51,7 @@ fprintf('Expected cost value (approx) 32.07\n');
 J = computeCost(X, y, [-1 ; 2]);
 fprintf('\nWith theta = [-1 ; 2]\nCost computed = %f\n', J);
 fprintf('Expected cost value (approx) 54.24\n');
+
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
