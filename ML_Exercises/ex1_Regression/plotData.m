@@ -7,8 +7,8 @@ figure;
 
 plot(x, y,'rx','MarkerSize', 10);
 
-xlabel('Population (10^4)','FontSize',15);
-ylabel('Profit in city (10^4) ','FontSize',15);
+xlabel('Population (1e4)','FontSize',15);
+ylabel('Profit in city (1e4) ','FontSize',15);
 
 
 end

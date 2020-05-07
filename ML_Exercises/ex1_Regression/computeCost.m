@@ -6,7 +6,7 @@ function J = computeCost(X, y, theta)
 % Initialize some useful values
 m = length(y); % number of training examples
 
-% You need to return the following variables correctly 
+% J is the cost function {also known as the mean squares error}
 J = (1/(2*m))*sum((X*theta - y).^2);
 
 

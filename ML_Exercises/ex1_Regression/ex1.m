@@ -37,7 +37,7 @@ pause;
 X = [ones(m, 1), data(:,1)]; % Add a column of ones to x, for vetorization
 theta = zeros(2, 1); % initialize fitting parameters
 
-% Some gradient descent settings
+% Stopping point for iterations
 iterations = 1500;
 alpha = 0.01; % Learning rate
 
@@ -70,7 +70,7 @@ fprintf(' -3.6303\n  1.1664\n\n');
 hold on; % keep previous plot visible
 plot(X(:,2), X*theta, '-')
 legend('Training data', 'Linear regression')
-hold off % don't overlay any more plots on this figure
+hold off
 
 % Predict values for population sizes of 35,000 and 70,000
 predict1 = [1, 3.5] *theta;
