@@ -9,11 +9,13 @@ J_history = zeros(num_iters, 1);
 
 for iter = 1:num_iters
     
-    theta(1) = theta(1) - (alpha/m)*(X*theta - y)'*X(:,1);
-    theta(2) = theta(2) - (alpha/m)*(X*theta - y)'*X(:,2);
+    tempTheta(1) = theta(1) - (alpha/m)*(X*theta - y)'*X(:,1);
+    tempTheta(2) = theta(2) - (alpha/m)*(X*theta - y)'*X(:,2);
     
-    % Save the cost J in every iteration  
-    J_history(iter) = computeCost(X, y, theta);
+    % Simultaneous update of theta(fitting function) , rather than
+    % instantaneous update
+    theta(1) = tempTheta(1);
+    theta(2) = tempTheta(2);
 
 %      if iter > 2 && abs(J_history(iter-1) - J_history(iter)) < 10^-8
 %          break;
